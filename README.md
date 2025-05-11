@@ -1,4 +1,4 @@
-# Домашнее задание к занятию "Система мониторинга Zabbix" - `Tarkov Viktor`
+# Домашнее задание к занятию "Система мониторинга Zabbix" - Tarkov Viktor
 
 
 ### Инструкция по выполнению домашнего задания
@@ -96,7 +96,7 @@
     apt install zabbix-agent
     find / -name zabbix_agentd.conf
     cat /etc/zabbix/zabbix_agentd.conf | grep Server=
-   #for vm where zabbix-server : sed -i 's/Server=127.0.0.1/Server=127.0.0.1,192.168.0.9/g' /etc/zabbix/zabbix_agentd.conf
+    #for vm where zabbix-server : sed -i 's/Server=127.0.0.1/Server=127.0.0.1,192.168.0.9/g' /etc/zabbix/zabbix_agentd.conf
     sed -i 's/Server=127.0.0.1/Server=192.168.0.9/g' /etc/zabbix/zabbix_agentd.conf
     systemctl restart zabbix-agent
     systemctl enable zabbix-agent 
