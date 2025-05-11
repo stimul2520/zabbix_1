@@ -89,17 +89,17 @@
 ![13](img/13.png)
 ![14](img/14.png)
 
-sudo -i
-wget https://repo.zabbix.com/zabbix/7.2/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.2+ubuntu24.04_all.deb
-dpkg -i zabbix-release_latest_7.2+ubuntu24.04_all.deb
-apt update
-apt install zabbix-agent
-find / -name zabbix_agentd.conf
-cat /etc/zabbix/zabbix_agentd.conf | grep Server=
-*for vm where zabbix-server:* sed -i 's/Server=127.0.0.1/Server=127.0.0.1,192.168.0.9/g' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/Server=127.0.0.1/Server=192.168.0.9/g' /etc/zabbix/zabbix_agentd.conf
-systemctl restart zabbix-agent
-systemctl enable zabbix-agent 
-systemctl status zabbix-agent.service 
+`sudo -i`
+`wget https://repo.zabbix.com/zabbix/7.2/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.2+ubuntu24.04_all.deb`
+`dpkg -i zabbix-release_latest_7.2+ubuntu24.04_all.deb`
+`apt update`
+`apt install zabbix-agent`
+`find / -name zabbix_agentd.conf`
+`cat /etc/zabbix/zabbix_agentd.conf | grep Server=`
+`*for vm where zabbix-server:* sed -i 's/Server=127.0.0.1/Server=127.0.0.1,192.168.0.9/g' /etc/zabbix/zabbix_agentd.conf`
+`sed -i 's/Server=127.0.0.1/Server=192.168.0.9/g' /etc/zabbix/zabbix_agentd.conf`
+`systemctl restart zabbix-agent`
+`systemctl enable zabbix-agent` 
+`systemctl status zabbix-agent.service` 
 
 ---
